@@ -4,11 +4,11 @@ import { signIn } from "next-auth/react";
 
 export default function SocialLogin() {
     const handleAuth = (event) => {
-        signIn("google", { callbackUrl: 'http://localhost:3000/cart' });
+        signIn("google", { callbackUrl: 'https://frt-cart-nextjs14.vercel.app/cart' });
     }
 
     const handleFacebookAuth = (event) => {
-        signIn("facebook", { callbackUrl: 'http://localhost:3000/cart' });
+        signIn("facebook", { callbackUrl: 'https://frt-cart-nextjs14.vercel.app/cart' });
     }
     return (
         <div className="mt-4 flex gap-4">

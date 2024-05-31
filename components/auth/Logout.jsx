@@ -5,7 +5,7 @@ const Logout = () => {
     <button
       className="text-white"
       onClick={() => {
-        signOut({ callbackUrl: "http://localhost:3000/login" })
+        signOut({ callbackUrl: "https://frt-cart-nextjs14.vercel.app/login" })
       }}
     >Sign Out</button>
   )
