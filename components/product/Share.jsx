@@ -6,8 +6,8 @@ import { usePathname } from 'next/navigation';
 export default function Share({ productInfo }) {
     const pathName = usePathname();
     console.log("page url", pathName);
-    const pageFullUrl = pathName;
-    // console.log(pageFullUrl);
+    const pageFullUrl = process.env.NEXT_PUBLIC_SITE_URI + usePathname();
+    console.log(pageFullUrl);
 
 
     return (

@@ -19,6 +19,18 @@ export async function generateMetadata({ params }) {
     return {
         title: productInfo?.name.slice(0, 100),
         description: productInfo?.description.slice(0, 100),
+        openGraph: {
+            images: [
+                {
+                    url: `https://frt-cart-nextjs14.vercel.app/api/og?title=${productInfo.name.slice(
+                        0,
+                        100
+                    )}`,
+                    width: 1200,
+                    height: 600,
+                },
+            ],
+        },
     };
 }
 
