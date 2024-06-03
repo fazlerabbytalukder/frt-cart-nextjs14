@@ -7,6 +7,7 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 export default function Search() {
     const searchParams = useSearchParams();
     const pathname = usePathname();
+    // console.log(pathname);
     const { replace } = useRouter();
 
     const [searchTerm, setSearchTerm] = useState("");
@@ -22,10 +23,15 @@ export default function Search() {
 
         const params = new URLSearchParams({ search: searchTerm });
 
+        // Extract the language part from the pathname
+        const pathParts = pathname.split('/');
+        const languageSegment = pathParts[1];
+
+        // Check if the pathname includes "shop"
         if (pathname.includes("shop")) {
             replace(`${pathname}?${params.toString()}`);
         } else {
-            replace(`${pathname}shop?${params.toString()}`);
+            replace(`/${languageSegment}/shop?${params.toString()}`);
         }
     }
 
